@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+body {
+  background-color: $main-bg-color;
+}
+
+label {
+  color: gray;
+}
+
+.title {
+  color: $main-text-color;
+}
+
+.my-alert {
+  top: 50px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: $secondary-color;
+  padding: 10px;
+  z-index: 10;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn {
+  outline: none;
+  border: 0;
+  padding: 8px 20px;
+}
+
+.btn-primary {
+  background-color: $primary-btn-color;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color: $secondary-color;
+}
+
+.btn-outline-success, .btn-outline-secondary {
+  color: gray;
+  box-shadow: none !important;
+}
+
+.btn-outline-secondary:hover {
+  color: $secondary-color;
+  background-color: transparent;
+}
+
+.btn-outline-success:hover {
+  background-color: $secondary-color !important;
+}
+
+.authBtn {
+  padding: 12px 20px;
+}
+
+.activeUser {
+  background-color: $secondary-color !important;
+}
+
+.active {
+  background-color: $secondary-bg-color;
+}
+
+.myBadge {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $badge-gray;
+}
+
+.check {
+  color: $secondary-color !important;
+  display: none;
+}
+
+input,
+textarea {
+  box-shadow: none !important;
+  color: $main-text-color !important;
+  border-color: $secondary-bg-color;
+  border-width: 0;
+  background-color: $secondary-bg-color !important;
+  border-radius: 4px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $secondary-bg-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary-bg-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary-color;
+}

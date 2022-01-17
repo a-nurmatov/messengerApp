@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  font-family: 'Poppins', sans-serif; }
+
+img:hover {
+  cursor: pointer; }
+
+body {
+  background-color: #F3F0F5; }
+
+label {
+  color: gray; }
+
+.title {
+  color: #1b1488; }
+
+.my-alert {
+  top: 50px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #E7798A;
+  padding: 10px;
+  z-index: 10;
+  color: white;
+  border-radius: 8px;
+  text-align: center; }
+
+.btn {
+  outline: none;
+  border: 0;
+  padding: 8px 20px; }
+
+.btn-primary {
+  background-color: #1b1488; }
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #E7798A; }
+
+.btn-outline-success, .btn-outline-secondary {
+  color: gray;
+  box-shadow: none !important; }
+
+.btn-outline-secondary:hover {
+  color: #E7798A;
+  background-color: transparent; }
+
+.btn-outline-success:hover {
+  background-color: #E7798A !important; }
+
+.authBtn {
+  padding: 12px 20px; }
+
+.activeUser {
+  background-color: #E7798A !important; }
+
+.active {
+  background-color: #DCD8E3; }
+
+.myBadge {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray; }
+
+.check {
+  color: #E7798A !important;
+  display: none; }
+
+input,
+textarea {
+  box-shadow: none !important;
+  color: #1b1488 !important;
+  border-color: #DCD8E3;
+  border-width: 0;
+  background-color: #DCD8E3 !important;
+  border-radius: 4px; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #DCD8E3; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DCD8E3; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #E7798A; }
+
+#logPage,
+#loader,
+#viewImageArea {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+#viewImageArea {
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center; }
+  #viewImageArea #imageAreaClose {
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    color: white; }
+  #viewImageArea #imageAreaClose:hover {
+    cursor: pointer;
+    color: #E7798A; }
+  #viewImageArea img {
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: inline-block;
+    margin: 0 auto; }
+
+#logPage form {
+  max-width: 450px; }
+#logPage .login-left {
+  background-color: #F3F0F5; }
+#logPage .login-right {
+  background-image: linear-gradient(to left bottom, #00b4d8, #1ab8da, #28bcdc, #33c0df, #3dc4e1, #49c8e3, #54cce5, #5ed0e7, #6cd4e9, #79d8eb, #85dced, #90e0ef); }
+#logPage .btn-link {
+  bottom: 20px;
+  margin: 0 auto !important;
+  align-self: end;
+  box-shadow: none !important; }
+#logPage .signUpLink {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: scale(0.9); }
+
+#loader {
+  display: grid;
+  place-items: center;
+  background-color: #F3F0F5; }
+  #loader img {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    width: 150px;
+    transform: rotate(0); }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  70%,
+  100% {
+    transform: rotate(360deg); } }
+#dashboard {
+  color: #1b1488;
+  height: 100vh; }
+
+.profile-chats {
+  height: 100%;
+  min-width: 300px; }
+
+.user-profile {
+  padding: 20px 0 10px; }
+  .user-profile #user-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover; }
+  .user-profile .user-control {
+    width: 55%; }
+  .user-profile #user-name {
+    font-size: 17px; }
+  .user-profile #user-email {
+    font-size: 10px;
+    word-wrap: break-word; }
+
+#user-settings {
+  z-index: 10;
+  left: 101%;
+  border-radius: 4px;
+  top: 82px;
+  background-color: #F3F0F5;
+  box-shadow: #17151F 0px 0px 1px;
+  min-width: 250px; }
+  #user-settings p {
+    font-size: 20px; }
+  #user-settings #closeUS:hover {
+    cursor: pointer;
+    color: #E7798A; }
+
+.chat-list {
+  flex: 1;
+  overflow: auto; }
+  .chat-list li:hover a {
+    background-color: #DCD8E3;
+    cursor: pointer; }
+  .chat-list::-webkit-scrollbar {
+    width: 0px; }
+  .chat-list a {
+    display: block;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #1b1488;
+    transition: 0.3s; }
+    .chat-list a .chat-item-cover {
+      gap: 10px; }
+    .chat-list a .last-message {
+      font-size: 12px; }
+    .chat-list a .new-messages {
+      width: 10px;
+      height: 10px;
+      background-color: #5CBDEA;
+      color: #F3F0F5;
+      right: 10px;
+      bottom: 10px;
+      font-size: 12px; }
+    .chat-list a .chat-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover; }
+    .chat-list a .myBadge {
+      bottom: 5px;
+      right: 5px; }
+
+.chat-board,
+#welcomeBoard {
+  background-color: #DCD8E3;
+  height: 100%;
+  width: 100%; }
+
+#welcomeBoard img {
+  width: 150px; }
+#welcomeBoard #welcomeName {
+  color: #E7798A;
+  font-weight: bold; }
+
+#receiver {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #F3F0F5; }
+  #receiver #receiver-name-img {
+    gap: 10px; }
+  #receiver #receiver-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; }
+  #receiver #receiver-status {
+    font-size: 12px;
+    color: #E7798A; }
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  width: 100%;
+  padding: 5px 15px 10px; }
+  .messages .message-box,
+  .messages .message-box-right,
+  .messages .message-box-left {
+    background-color: #F3F0F5;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 60%;
+    max-width: 60%;
+    min-width: fit-content;
+    border-radius: 8px; }
+    .messages .message-box textarea,
+    .messages .message-box-right textarea,
+    .messages .message-box-left textarea {
+      background-color: transparent !important;
+      resize: none;
+      outline: none;
+      width: 100%;
+      height: fit-content; }
+    .messages .message-box .edit-del-name,
+    .messages .message-box-right .edit-del-name,
+    .messages .message-box-left .edit-del-name {
+      gap: 20px; }
+      .messages .message-box .edit-del-name button,
+      .messages .message-box-right .edit-del-name button,
+      .messages .message-box-left .edit-del-name button {
+        font-size: 14px;
+        color: #DCD8E3; }
+      .messages .message-box .edit-del-name button:hover,
+      .messages .message-box-right .edit-del-name button:hover,
+      .messages .message-box-left .edit-del-name button:hover {
+        color: #E7798A; }
+    .messages .message-box .message-time,
+    .messages .message-box-right .message-time,
+    .messages .message-box-left .message-time {
+      font-size: 12px;
+      right: 20px;
+      bottom: 10px; }
+
+.message-send-area {
+  background-color: #F3F0F5;
+  padding: 15px 20px; }
+  .message-send-area #send-area {
+    gap: 20px; }
+  .message-send-area textarea {
+    resize: none;
+    padding: 5px; }
+  .message-send-area i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #5CBDEA; }
+  .message-send-area i:hover {
+    color: #E7798A;
+    cursor: pointer; }
+
+@media (max-width: 650px) {
+  .profile-chats {
+    width: 100%; }
+
+  #user-settings {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+  #welcomeBoard {
+    display: none !important; }
+
+  .chat-board {
+    width: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; }
+
+  #viewImageArea img {
+    width: 70%; } }
+body.dark-mode {
+  background-color: #211E2B; }
+  body.dark-mode .active {
+    background-color: #17151F; }
+  body.dark-mode .title {
+    color: #F3F0F5; }
+  body.dark-mode input,
+  body.dark-mode textarea {
+    box-shadow: none !important;
+    color: #F3F0F5 !important;
+    border-color: #17151F;
+    background-color: #17151F !important; }
+    body.dark-mode input::-webkit-scrollbar-track,
+    body.dark-mode textarea::-webkit-scrollbar-track {
+      background-color: #17151F !important; }
+    body.dark-mode input::-webkit-scrollbar-thumb,
+    body.dark-mode textarea::-webkit-scrollbar-thumb {
+      background-color: #211E2B !important; }
+  body.dark-mode #loader {
+    background-color: #211E2B; }
+  body.dark-mode #logPage .login-left {
+    background-color: #211E2B; }
+  body.dark-mode #logPage .login-right {
+    background-image: none;
+    background-color: #17151F; }
+  body.dark-mode #dashboard {
+    color: #F3F0F5; }
+  body.dark-mode #user-settings {
+    background-color: #211E2B; }
+  body.dark-mode .chat-list li:hover a {
+    background-color: #17151F; }
+  body.dark-mode .chat-list a {
+    color: #F3F0F5; }
+  body.dark-mode .chat-list .new-messages {
+    color: #211E2B; }
+  body.dark-mode .chat-board, body.dark-mode #welcomeBoard {
+    background-color: #17151F; }
+  body.dark-mode #receiver {
+    background-color: #211E2B; }
+  body.dark-mode .messages .message-box,
+  body.dark-mode .messages .message-box-right,
+  body.dark-mode .messages .message-box-left {
+    background-color: #211E2B; }
+    body.dark-mode .messages .message-box button,
+    body.dark-mode .messages .message-box-right button,
+    body.dark-mode .messages .message-box-left button {
+      color: #17151F; }
+    body.dark-mode .messages .message-box .m-0, body.dark-mode .messages .message-box .message-time,
+    body.dark-mode .messages .message-box-right .m-0,
+    body.dark-mode .messages .message-box-right .message-time,
+    body.dark-mode .messages .message-box-left .m-0,
+    body.dark-mode .messages .message-box-left .message-time {
+      color: gray; }
+  body.dark-mode .messages::-webkit-scrollbar-track {
+    background-color: #17151F; }
+  body.dark-mode .messages::-webkit-scrollbar-thumb {
+    background-color: #211E2B; }
+  body.dark-mode .message-send-area {
+    background-color: #211E2B; }
+
+/*# sourceMappingURL=style.css.map */

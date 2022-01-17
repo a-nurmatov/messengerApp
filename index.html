@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="./img/icon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Messenger</title>
+</head>
+
+<body>
+
+  <section class="container-fluid d-flex p-0 d-none" id='dashboard'>
+    <div class="profile-chats position-relative d-flex flex-column">
+      <div id="user-settings" class="p-2 position-absolute d-none">
+        <p class="text-secondary d-flex justify-content-between align-items-center">User settings
+          <span><i class="fa fa-times" id="closeUS" aria-hidden="true"></i></span>
+        </p>
+        <form action="" id="userSettingsForm" class="mx-auto" autocomplete="off">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" placeholder="name@example.com" required>
+            <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating">
+            <input type="url" class="form-control" name="imgLink" placeholder="Password" required>
+            <label for="floatingPassword">User image</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4 d-block mx-auto w-50">Update</button>
+        </form>
+      </div>
+      <div class="text-center user-profile">
+        <div class="d-flex align-items-center justify-content-evenly">
+          <img id="user-img" src="./img/icon.png" alt="user-img" class="rounded-circle">
+          <div class="user-control">
+            <p class="fw-bold m-0" id="user-name">Username</p>
+            <p class="text-secondary m-0 mb-1" id="user-email">Email</p>
+            <div class="settings-exit d-flex justify-content-between">
+              <button class="btn btn-outline-secondary" id="logOut"><i
+                  class="fas fa-sign-out-alt fa-rotate-180"></i></button>
+              <button class="btn btn-outline-secondary" id="userSettings"><i
+                  class="fas fa-user-cog position-relative"></i></button>
+              <button class="btn btn-outline-secondary" id="nightMode"><i class="fas fa-moon"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="px-2 mt-3 d-flex align-items-center">
+          <input type="search" id="searchUser" class="form-control" placeholder="Search user...">
+          <button class="btn p-2 btn-outline-secondary m-0"><i id="searchUserBtn" class="fa fa-search"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <ul class="chat-list list-unstyled">
+        <!-- <li>
+          <a href="#">
+            <div class="chat-item-cover d-flex align-items-center position-relative">
+              <div class="position-relative">
+                <img class="img-fluid rounded-circle chat-img"
+                  src="https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="">
+                <div class="myBadge position-absolute"></div>
+              </div>
+              <div class="chat-name-message">
+                <p class="chat-name m-0">Abdurahim</p>
+                <p class="last-message m-0 text-secondary">Lorem, ipsum dolor.</p>
+              </div>
+              <div class="new-messages d-none position-absolute m-0 rounded-circle d-flex justify-content-center align-items-center">3</div>
+            </div>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+    <div id="welcomeBoard" class="p-3 d-flex flex-column align-items-center justify-content-center">
+      <img src="./img/icon.png" alt="" class="img-fluid">
+      <p class="mt-3 text-center">Welcome <span id='welcomeName'></span></p>
+      <p class="text-center">Search user or select chat to start messaging.</p>
+    </div>
+    <div class="chat-board d-flex flex-column d-none">
+      <div id="receiver" class="d-flex justify-content-between align-items-center">
+        <div id="receiver-name-img" class="d-flex ">
+          <img class="rounded-circle" src="./img/icon.png" alt="" id="receiver-img">
+          <div>
+            <p id="receiver-name" class="m-0">Abdurahim</p>
+            <p id="receiver-status" class="m-0">Last seen</p>
+          </div>
+        </div>
+        <button class="btn btn-outline-secondary" id="closeChatWindow"><i class="fa fa-times"
+            aria-hidden="true"></i></button>
+      </div>
+      <div class="messages d-flex flex-column">
+        <!-- <div class="message-box position-relative">
+          <div class="edit-del-name d-flex justify-content-between align-items-center">
+            <p class="m-0">Username</p>
+            <div>
+              <button class="btn btn-outline-secondary p-1"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+              <button class="btn btn-outline-secondary p-1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam provident doloremque mollitia praesentium
+            dolore ad cum aliquid, atque fugiat quasi?
+          </p>
+          <span class="message-time position-absolute">12:00 pm</span>
+        </div> -->
+      </div>
+      <div class="message-send-area">
+        <!-- <button id="startMessaging" class="btn btn-primary d-block w-100 py-3">Start messaging</button> -->
+        <form id="send-area" class="d-flex align-items-end">
+          <textarea name="" id="messageArea" class="form-control" rows="1" required></textarea>
+          <i id="sendMessage" class="fas fa-paper-plane"></i>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section id="logPage" class="position-absolute d-none">
+    <div class="row h-100">
+      <div
+        class="col-lg-5 col-sm-12 login-left d-flex align-items-center justify-content-center flex-column position-relative">
+        <div class="my-alert mt-3 d-none show hide position-absolute"></div>
+        <p class="signUpLink position-absolute">
+          <button class="btn btn-outline-success ms-3" id="signUpLinkBtn">Sign Up</button>
+          <button class="btn btn-outline-success ms-3 d-none" id="signInLinkBtn">Sign In</button>
+        </p>
+        <h2 class="title mb-5">Messenger</h2>
+        <form action="" id="signInForm" class="w-75" autocomplete="off">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4 d-block mx-auto w-50">Sign In</button>
+        </form>
+        <button class="btn btn-link position-absolute" id="resetPassword">Reset password</button>
+
+
+        <form action="" id="signUpForm" class="w-75 d-none" autocomplete="off">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="name" placeholder="name@example.com" required>
+            <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4 d-block mx-auto w-50 authBtn">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="col-lg-7 login-right d-none d-lg-block">
+        <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_egxsy0o3.json" background="transparent"
+          speed="0.5" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+      </div>
+    </div>
+  </section>
+  <section id="loader" class="position-absolute">
+    <img src="./img/icon.png" alt="icon">
+  </section>
+  <section id="viewImageArea" class="position-absolute d-none">
+    <i class="fa fa-times position-absolute" aria-hidden="true" id="imageAreaClose"></i>
+    <img src="./img/icon.png" alt="" id="viewImg">
+  </section>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  
+  <script type="module" src="./js/firebase.js"></script>
+  <script type="module" src="./js/form.js"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
